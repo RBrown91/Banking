@@ -14,6 +14,7 @@ import Image from "next/image";
 import { sidebarLinks } from "@/constants";
 import { cn } from "@/lib/utils";
 import { usePathname } from "next/navigation";
+import Footer from "./Footer";
 
 const MobileNav = ({ user }: MobileNavProps) => {
   const pathname = usePathname();
@@ -32,8 +33,7 @@ const MobileNav = ({ user }: MobileNavProps) => {
         <SheetContent side="left" className="border-none bg-white">
           <Link
             href="/"
-            className="cursor-pointer items-center gap-1 px-4 flex"
-          >
+            className="cursor-pointer items-center gap-1 px-4 flex">
             <Image
               src="/icons/logo.svg"
               width={34}
@@ -58,8 +58,7 @@ const MobileNav = ({ user }: MobileNavProps) => {
                         key={item.label}
                         className={cn("mobilenav-sheet_close w-full", {
                           "bg-bank-gradient": isActive,
-                        })}
-                      >
+                        })}>
                         <Image
                           src={item.imgURL}
                           alt={item.label}
@@ -72,8 +71,7 @@ const MobileNav = ({ user }: MobileNavProps) => {
                         <p
                           className={cn("text-16 font-semibold text-black-2", {
                             "!text-white": isActive,
-                          })}
-                        >
+                          })}>
                           {item.label}
                         </p>
                       </Link>
@@ -83,7 +81,7 @@ const MobileNav = ({ user }: MobileNavProps) => {
                 USERDATA
               </nav>
             </SheetClose>
-            FOOTER
+            <Footer user={user} type="mobile" />
           </div>
         </SheetContent>
       </Sheet>
