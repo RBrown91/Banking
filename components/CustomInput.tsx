@@ -33,6 +33,7 @@ const CustomInput = ({ control, name, placeholder, label }: CustomInput) => {
                 className="input-class"
                 {...field}
                 type={name === "password" ? "password" : "text"}
+                required
               />
             </FormControl>
             <FormMessage className="form-message mt-2" />
